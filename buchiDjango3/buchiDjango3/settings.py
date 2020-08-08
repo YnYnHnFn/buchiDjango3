@@ -31,6 +31,13 @@ ALLOWED_HOSTS = []
 # https://docs.djangoproject.com/en/2.1/ref/settings/#std:setting-INSTALLED_APPS
 INSTALLED_APPS = [
     # Add your apps here to enable them
+
+    'polls.apps.pollsConfig',
+    # アプリケーションをプロジェクトに含めるには、構成クラスへの参照を 
+    # INSTALLED_APPS 設定に追加する必要があります。 
+    # pollsConfig クラスは、 polls/apps.py にあるので、
+    # ドットつなぎのパスは 'polls.apps.PollsConfig' となります。
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -81,6 +88,20 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+    #ENGINE -- 
+    #　'django.db.backends.sqlite3'
+    #　'django.db.backends.postgresql'
+    #　'django.db.backends.mysql' 
+    #　'django.db.backends.oracle' 
+    #　のいずれか。その他のバックエンド も利用可能です。
+
+    #NAME -- データベースの名前です。
+    #　SQLite を使用している場合、データベースはコンピュータ上のファイルになります。
+    #　その場合、NAME には、そのファイルのファイル名を含んだ絶対パスを指定する必要があります。
+    #　デフォルト値は os.path.join(BASE_DIR, 'db.sqlite3') で、プロジェクトのディレクトリに保存されます。
+    #　SQLite を使っていない場合、 USER や PASSWORD そして HOST などの 追加設定を加える必要があります。
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -101,8 +122,11 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
-LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'UTC'
+
+LANGUAGE_CODE = 'ja'        #'en-us'
+
+TIME_ZONE = 'Asia/Tokyo'    #'UTC'
+
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True

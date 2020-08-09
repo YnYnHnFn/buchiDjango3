@@ -28,23 +28,19 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
-# include() 関数は他の URLconf への参照することができます。 
-# Django が include() に遭遇すると、そのポイントまでに一致した
-# URL の部分を切り落とし、次の処理のために残りの文字列を
-# インクルードされた URLconf へ渡します。
-# include() の背景にある考えは、 URL を簡単にプラグ & プレイ可能にする
-# ことです。polls には独自の URLconf (polls/urls.py) を持っているので、
-# "/polls/" 、 "/fun_polls/" や、 "/content/polls/" といった、
-# どんなパスルート下にも置けて、どこに置いてもきちんと動作します。
+import polls.views  ### とりあえず
 
 urlpatterns = [
 
-    path('polls/', include('polls.urls')),
-    # polls下のurls.py に行くように！
+    path('', polls.views.index),  ### とりあえず pollsしかない間は。。
 
+
+    path('polls/', include('polls.urls')),
+    # pollsなんちゃらってURLの場合は polls下のurls.py で。たらい回し。
+
+    path('admin/', admin.site.urls),
     # URLパターンをインクルードするときはいつでも include() を使うべきです。 
     # admin.site.urls はこれについての唯一の例外です。
-    path('admin/', admin.site.urls),
 
 ]
 
@@ -55,6 +51,15 @@ urlpatterns = [
 #                 　キーワード引数としてrouteから「キャプチャされた」値を呼び出します。
 #    kwargs       ・任意のキーワード引数を辞書として対象のビューに渡せます。
 #    name         ・URL に名前付けをしておけば Django のどこからでも明確に参照でき、とくにテンプレートの中で有効です。
-#                   この便利な機能のおかげで、プロジェクトのURLにグローバルな変更を加える場合にも1つのファイルを
-#                   変更するだけで済むようになります。
+#                   テンプレートで私を書くときはこの名前を使ってくれ。
 #    ),
+
+# include() 関数は他の URLconf への参照することができます。 
+# Django が include() に遭遇すると、そのポイントまでに一致した
+# URL の部分を切り落とし、次の処理のために残りの文字列を
+# インクルードされた URLconf へ渡します。
+# include() の背景にある考えは、 URL を簡単にプラグ & プレイ可能にする
+# ことです。polls には独自の URLconf (polls/urls.py) を持っているので、
+# "/polls/" 、 "/fun_polls/" や、 "/content/polls/" といった、
+# どんなパスルート下にも置けて、どこに置いてもきちんと動作します。
+

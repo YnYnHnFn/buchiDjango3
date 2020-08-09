@@ -62,6 +62,12 @@ ROOT_URLCONF = 'buchiDjango3.urls'
 
 # Template configuration
 # https://docs.djangoproject.com/en/2.1/topics/templates/
+
+# Django がどのようにテンプレートをロードしレンダリングするかが書かれています。
+# デフォルトの設定ファイルでは、 DjangoTemplates バックエンドが設定されており、
+# その APP_DIRS のオプションが True になっています。規約により、DjangoTemplates は
+# INSTALLED_APPS のそれぞれの "templates" サブディレクトリを検索します。
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

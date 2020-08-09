@@ -6,17 +6,44 @@
     <title></title>
 </head>
 <body>
+
     <h1>{{ question.question_text }}</h1>
     <!--変数の属性にアクセスするためにドット検索の構文を使用します。
         はじめにquestion オブジェクトに辞書検索を行います。
         それに失敗したら、今度は属性として検索を行い、
         もし属性の検索に失敗すると、リストインデックスでの検索を行います。
         -->
-
     <ul>
     {% for choice in question.choice_set.all %}
         <li>{{ choice.choice_text }}</li>
     {% endfor %}
     </ul>
+
+    <hr> {# ---------- ---------- ---------- ---------- ---------- #}
+    {#↓↓ Form化 #}
+
+    <h1>{{ question.question_text }}</h1>
+
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+    <form action="{% url 'polls:vote' question.id %}" method="post">
+    {#ラジオボタンの1つを選択し、フォームを送信すると、POSTデータ choice=##} 
+    {#（＃は選んだ選択肢のID）が送信されます。#}
+
+    {% csrf_token %} {#クロスサイトリクエストフォージェリ対応 フォームのタグ内に書くのね？#}
+
+    {% for choice in question.choice_set.all %}
+
+        <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+
+        <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
+        {#forloop.counter は、 for タグのループが何度実行されたかを表す値です。#}
+
+    {% endfor %}
+
+    <input type="submit" value="Vote">
+
+    </form>
+
 </body>
 </html>

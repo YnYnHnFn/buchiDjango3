@@ -17,7 +17,9 @@ from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
+from django.utils import timezone
 from django.views import generic
+
 
 from .models import Choice, Question
 
@@ -75,7 +77,11 @@ class IndexView(generic.ListView):  #一覧系は generic.ListView を継承
 
     def get_queryset(self):
         """Return the last five published questions."""
-        return Question.objects.order_by('-pub_date')[:5]
+        #return Question.objects.order_by('-pub_date')[:5]
+        #未来日を除く条件追加
+        return Question.objects.filter(
+            pub_date__lte=timezone.now()
+        ).order_by('-pub_date')[:5]
 
 
 # --------- --------- --------- --------- 
@@ -111,6 +117,12 @@ class DetailView(generic.DetailView):
     #デフォルトでは単票系は <app name>/<model name>_detail.html がテンプレート名
     #変更したい場合だけ template_name を指定。
     template_name = 'polls/detail.html'
+
+    def get_queryset(self):
+        """
+        Excludes any questions that aren't published yet.
+        """
+        return Question.objects.filter(pub_date__lte=timezone.now())
 
     #汎用ビューではコンテキスト変数は モデル名より自動的に生成されます。小文字。
     #DetailView なら <model name>、ListView なら <model name>_list

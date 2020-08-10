@@ -28,16 +28,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
-### とりあえず pollsしかない間だけ。。
-#import polls.views
+### ・・・とりあえず pollsしかない間だけ。。
+#import polls.views # ↓汎用veiw使う変更に伴い、
 from polls import views 
 
 urlpatterns = [
 
-    ## とりあえず pollsしかない間だけ。。
+    ## ・・・とりあえず pollsしかない間だけ。。
     #path('', polls.views.index),  
+    path('', admin.site.urls),
     path('', views.IndexView.as_view(), name='index'),
-
+    
     path('polls/', include('polls.urls')),
     # pollsなんちゃらってURLの場合は polls下のurls.py で。たらい回し。
 

@@ -71,7 +71,10 @@ ROOT_URLCONF = 'buchiDjango3.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        # 管理画面用にトップに作ったフォルダを追記。
+
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -135,7 +138,7 @@ TIME_ZONE = 'Asia/Tokyo'    #'UTC'
 
 USE_I18N = True
 USE_L10N = True
-USE_TZ = True
+USE_TZ = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/

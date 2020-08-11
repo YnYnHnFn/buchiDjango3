@@ -16,6 +16,10 @@ import posixpath
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+#アップロード系のモデルフィールド用に。
+LOCAL_FILE_DIR = BASE_DIR + '\_upload_files'
+
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
@@ -31,6 +35,8 @@ ALLOWED_HOSTS = []
 # https://docs.djangoproject.com/en/2.1/ref/settings/#std:setting-INSTALLED_APPS
 INSTALLED_APPS = [
     # Add your apps here to enable them
+
+    'buchi_wk.apps.buchi_wkConfig',
 
     'polls.apps.pollsConfig',
     # アプリケーションをプロジェクトに含めるには、構成クラスへの参照を 
@@ -73,7 +79,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
 
         'DIRS': [os.path.join(BASE_DIR, 'templates')],
-        # 管理画面用にトップに作ったフォルダを追記。
+        # 管理画面用に トップに作ったフォルダを追記。
 
         'APP_DIRS': True,
         'OPTIONS': {
@@ -144,3 +150,4 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 STATIC_URL = '/static/'
 STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
+

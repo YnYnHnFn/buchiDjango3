@@ -10,10 +10,14 @@
     {% for question in latest_question_list %}
 
         {#<li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li>#}
+
         {# ↓↓　url テンプレートタグを使う                                #}
         {#       urls.pyで書いてあるPATHで生成。name定義しているから可能。 #}
+
         {#<li><a href="{% url 'detail' question.id %}">{{ question.question_text }}</a></li>#}
+
         {# ↓↓　アプリ指定。（名前空間がurls.pyでされてる前提）#}
+
         <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
 
     {% endfor %}

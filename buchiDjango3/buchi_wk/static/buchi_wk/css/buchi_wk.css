@@ -1,0 +1,23 @@
+body {
+    margin: 10px;
+}
+
+h1 {
+    font-size: 20px;
+    color: red;
+}
+
+
+.twitter-blue {
+    color: #00aced
+}
+.facebook-blue {
+    color: #00aced
+}
+.google-red {
+    color: #db4a39
+}
+.line-green {
+    color: #5ae628
+}
+

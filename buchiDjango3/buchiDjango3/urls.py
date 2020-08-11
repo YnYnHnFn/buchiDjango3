@@ -19,7 +19,6 @@ Including another URLconf
 ## Uncomment next two lines to enable admin:
 ##from django.contrib import admin
 ##from django.urls import path
-
 #urlpatterns = [
 #    # Uncomment the next line to enable the admin:
 #    #path('admin/', admin.site.urls)
@@ -28,17 +27,19 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
-### ・・・とりあえず pollsしかない間だけ。。
-#import polls.views # ↓汎用veiw使う変更に伴い、
-from polls import views 
+### ・・・とりあえず トップがないので
+#import polls.views
+import buchi_wk.views
 
 urlpatterns = [
 
-    ## ・・・とりあえず pollsしかない間だけ。。
-    #path('', polls.views.index),  
-    path('', admin.site.urls),
-    path('', views.IndexView.as_view(), name='index'),
-    
+    ### ・・・とりあえず トップがないので
+    path('', buchi_wk.views.index, name='index'),
+
+
+    path('buchi_wk/', include('buchi_wk.urls')),
+    # buchi_wkなんちゃらってURLの場合は buchi_wk下のurls.py で。たらい回し。
+
     path('polls/', include('polls.urls')),
     # pollsなんちゃらってURLの場合は polls下のurls.py で。たらい回し。
 

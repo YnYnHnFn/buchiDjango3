@@ -1,23 +1,39 @@
 body {
     margin: 10px;
+    background-color:aliceblue;
+    font-family: sans-serif;
 }
 
-h1 {
-    font-size: 20px;
-    color: red;
+/*規定フォント 読み手依存*/
+.defFnt {
+    font-family: 'MS Gothic',sans-serif;
+    color: maroon;
+}
+
+/*Webフォント。htmlのheadで読み込み後、ここで指定*/
+.webFnt {
+    font-family: 'M+ C Type-2 (basic latin) Regular', 'M+ Type-2 (general-j) Regular', sans-serif;
+    color: maroon;
+}
+
+/*サイト側にフォントファイルを置く場合、*/
+/*まずオリジナルのfontFamilyを作って、それを指定。*/
+@font-face {
+    font-family: 'MyTanukiFont';
+    src: url(TanukiMagic.ttf);
+}
+.cstmFnt {
+    font-family: 'MyTanukiFont',sans-serif;
+    color: maroon;
 }
 
 
-.twitter-blue {
-    color: #00aced
+.fab {
+    margin: 5px
 }
-.facebook-blue {
-    color: #00aced
-}
-.google-red {
-    color: #db4a39
-}
-.line-green {
-    color: #5ae628
-}
+
+.twitter-blue { color: #00aced }
+.facebook-blue { color: #00aced }
+.google-red { color: #db4a39 }
+.line-green { color: #5ae628 }
 

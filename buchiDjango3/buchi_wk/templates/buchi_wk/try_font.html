@@ -1,0 +1,38 @@
+﻿{% extends "buchi_wk/base.html" %}
+
+{% block content %}
+
+<hr>
+<h1>Font</h1>
+
+<p>基本、フォントはcssで行います。下記はどこで仕込んでいるかの確認です。使用しているフォントデザインに意味はありません。</p>
+<br />
+
+<div>
+    <h3>フォント指定なし</h3>
+    <p>The quick brown fox jumps over the lazy dog.</p>
+    <p>色は匂へど散りぬるを　我が世誰ぞ常ならむ　有為の奥山今日越えて　浅き夢見じ酔ひもせず</p>
+    <p>いろはにほへとちりぬるをわかよたれそつねならむうゐのおくやまけふこえてあさきゆめみしゑひもせす</p>
+</div>
+<div>
+    <h3>既定のフォントファミリーで書いてみた</h3>
+    <p class="defFnt">The quick brown fox jumps over the lazy dog.</p>
+    <p class="defFnt">色は匂へど散りぬるを　我が世誰ぞ常ならむ　有為の奥山今日越えて　浅き夢見じ酔ひもせず</p>
+    <p class="defFnt">いろはにほへとちりぬるをわかよたれそつねならむうゐのおくやまけふこえてあさきゆめみしゑひもせす</p>
+</div>
+<div>
+    <h3>Webフォントを指定した例</h3>
+    <p class="webFnt">The quick brown fox jumps over the lazy dog.</p>
+    <p class="webFnt">色は匂へど散りぬるを　我が世誰ぞ常ならむ　有為の奥山今日越えて　浅き夢見じ酔ひもせず</p>
+    <p class="webFnt">いろはにほへとちりぬるをわかよたれそつねならむうゐのおくやまけふこえてあさきゆめみしゑひもせす</p>
+</div>
+<div>
+    <h3>サイト内にフォントファイルがある例</h3>
+    <p class="cstmFnt">The quick brown fox jumps over the lazy dog.</p>
+    <p class="cstmFnt">色は匂へど散りぬるを　我が世誰ぞ常ならむ　有為の奥山今日越えて　浅き夢見じ酔ひもせず</p>
+    <p class="cstmFnt">いろはにほへとちりぬるをわかよたれそつねならむうゐのおくやまけふこえてあさきゆめみしゑひもせす</p>
+</div>
+
+
+
+{% endblock %}

@@ -3,8 +3,13 @@
 {% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
 
 {% block branding %}
-<h1 id="site-name"><a href="{% url 'admin:index' %}">{{ site_header|default:_('Django administration') }}</a></h1>
+{#<h1 id="site-name"><a href="{% url 'admin:index' %}">{{ site_header|default:_('Django administration') }}</a></h1>#}
 <h1 id="site-name"><a href="{% url 'admin:index' %}">buchiDjango3 administration</a></h1>
+<div>
+<a href="{% url 'buchi_wk:index' %}">buchi_wk </a>
+<a href="{% url 'polls:index' %}">polls </a>
+</div>
 {% endblock %}
 
 {% block nav-global %}{% endblock %}
+

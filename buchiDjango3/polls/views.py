@@ -42,7 +42,7 @@ from .models import Choice, Question
 #    # テンプレートをロードしてコンテキストに値を入れ、
 #    # ※コンテキストは、テンプレート変数名を Python オブジェクトにマッピングする辞書
 #    # テンプレートをレンダリングした結果を 
-#    # HttpResponse オブジェクトで返す。 →→→このショートカットがrender()
+#    # HttpResponse オブジェクトで返す。 →→→ このショートカットがrender()
 
 ## ↓ ショートカット　render()化
 

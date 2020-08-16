@@ -15,5 +15,15 @@ app_name = 'buchi_wk'
 #                   テンプレートで私を書くときはこの名前を使ってくれ。
 
 urlpatterns = [
+
     path('', views.index, name='index'),
+
+    #path('try_', views.index, name='try_hoge'),
+
+    path('try_bootstrap.html', views.try_bootstrap, name='try_bootstrap'),
+    path('try_font.html', views.try_font, name='try_font'),
+    path('try_fontawesome.html', views.try_fontawesome, name='try_fontawesome'),
+
+
+
 ]

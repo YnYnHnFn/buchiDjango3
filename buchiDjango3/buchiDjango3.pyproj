@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="buchi_wk\static\buchi_wk\css\buchi_wk.css" />
+    <Content Include="buchi_wk\static\buchi_wk\css\TanukiMagic.ttf" />
     <Content Include="buchi_wk\static\buchi_wk\vendor\css\bootstrap-grid.css" />
     <Content Include="buchi_wk\static\buchi_wk\vendor\css\bootstrap-grid.css.map" />
     <Content Include="buchi_wk\static\buchi_wk\vendor\css\bootstrap-grid.min.css" />
@@ -79,6 +80,9 @@
     <Content Include="buchi_wk\static\buchi_wk\vendor\js\bootstrap.js.map" />
     <Content Include="buchi_wk\static\buchi_wk\vendor\js\bootstrap.min.js" />
     <Content Include="buchi_wk\static\buchi_wk\vendor\js\bootstrap.min.js.map" />
+    <Content Include="buchi_wk\templates\buchi_wk\try_font.html" />
+    <Content Include="buchi_wk\templates\buchi_wk\try_fontawesome.html" />
+    <Content Include="buchi_wk\templates\buchi_wk\try_bootstrap.html" />
     <Content Include="buchi_wk\templates\buchi_wk\index.html" />
     <Content Include="buchi_wk\templates\buchi_wk\base.html" />
     <Content Include="polls\static\polls\style.css" />
